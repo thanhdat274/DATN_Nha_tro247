@@ -1,0 +1,80 @@
+/* code css phần trang giới thiệu */
+.main {
+    @apply w-[1100px] m-auto relative z-[1] sm:max-w-[640px] sm:px-[10px] md:max-w-[768px] md:px-[10px] lg:max-w-[1024px] lg:px-[10px]
+  }
+   
+  .the_article {
+    @apply mt-[20px] mb-[100px] text-[16.8px] leading-[25.3px] border border-[#dedede] bg-white p-[20px] rounded-[8px] text-[#333333] 
+  }
+  
+  .desc {
+    @apply my-[18px] bg-white 
+  }
+  
+  .desc1 {
+    @apply my-[14px]
+  }
+  
+  .link {
+    @apply text-[#1266dd]  hover:text-[#ff6600]
+  }
+  
+  .section {
+    @apply mb-[20px] p-[20px] bg-[#fff] border-[1px] border-[#dedede] rounded-[8px] 
+  }
+  
+  .section-whyus,.section_content {
+    @apply pt-[20px] px-[50px] pb-[50px] text-center text-[15px]
+  }
+  
+  .section .section_title {
+    @apply text-[21px] font-bold m-0 p-0
+  }
+  
+  .whyus_countup {
+   @apply flex
+  }
+  
+ .whyus_countup_item {
+  @apply w-[25%] float-left text-center
+  }
+  
+ .whyus_countup_item .whyus_countup_item_number {
+    @apply font-bold text-[1.5rem] block mb-[5px]
+  }
+  
+  .but {
+    @apply bg-[#f73859] border-[#f73859] text-white
+  }
+  
+  .section-support {
+    @apply border-[7px] border-dashed border-[#e8eefc] p-[30px] mt-[30px] rounded-[8px]
+  }
+  
+  .section-support .list-support {
+    @apply text-center px-[10px] mt-[30px]
+  }
+  
+  .section-support .list-support-title {
+    @apply text-[1.2rem] mb-[20px] text-[#233762]
+  }
+  
+  .section-support .support-item {
+    @apply mb-[25px] w-[33%] float-left
+  }
+  
+  .section-support .support-item-title {
+    @apply font-bold block mb-[10px] text-[#f60] uppercase
+  }
+  
+  .section-support .support-item a {
+    @apply block text-[#233762] text-[1.5rem] font-bold my-[5px] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.5rem]
+  }
+  
+  .section-support a .btn {
+    @apply inline-flex text-[#fff] text-[1rem] font-bold py-[10px] px-[30px]
+  }
+  
+  .btn {
+    @apply h-[40px] rounded-[5px] border-[1px] border-solid border-[#3961fb] bg-[#3961fb] font-bold text-[#fff] inline-flex items-center justify-center no-underline cursor-pointer px-[10px] m-0
+  }

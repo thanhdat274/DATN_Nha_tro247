@@ -1,0 +1,15 @@
+/* import tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+
+.container {
+  padding: 0 10px;
+}
