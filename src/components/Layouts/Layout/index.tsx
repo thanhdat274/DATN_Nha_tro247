@@ -18,8 +18,10 @@ export default function Layout(props: ILayoutProps) {
           url: 'https://nhatro247.vercel.app',
         }}
       />
+
       <Header />
-      <div className="container mx-auto mt-2 sm:mt-10 mb-4 sm:mb-20">
+
+      <div className="mx-auto mb-4 sm:mb-20 ">
         <main>{props.children}</main>
       </div>
       <div className="container mx-auto">

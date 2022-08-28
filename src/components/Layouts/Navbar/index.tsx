@@ -14,7 +14,7 @@ export default function Navbar(props: INavbarProps) {
         {MENU.map((items: any, index: number) => (
           <Link href={items.path} key={index}>
             <a
-              className={`text-black lg:text-white font-bold px-0 lg:px-4 h-full block lg:inline-flex items-center py-[10px] hover:bg-transparent lg:hover:bg-[#f73859] ${
+              className={`text-black lg:text-white font-bold px-0 lg:px-4 h-full block lg:inline-flex items-center py-[10px] pl-[20px] hover:bg-transparent lg:hover:bg-[#f73859] ${
                 router.pathname === items.path ? 'bg-transparent lg:bg-[#f73859]' : ''
               }`}
             >

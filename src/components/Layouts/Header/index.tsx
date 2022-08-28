@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { signIn, signOut, useSession } from 'next-auth/react';
 import Tippy from '@tippyjs/react/headless';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,17 +16,17 @@ import {
   faBars,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Navbar from '../Navbar';
 
 export default function Header() {
-  const { data: session, status } = useSession();
-
-  console.log('session', session);
-
   const [toggle, setToogle] = useState(false);
   const toggleNav = () => {
     setToogle(!toggle);
   };
+  const { data: session, status } = useSession();
+
+  const getAll = true;
 
   return (
     <div className="shadow lg:shadow-none">
@@ -55,7 +54,7 @@ export default function Header() {
               </a>
             </Link>
             <div className="flex">
-              {!session && (
+              {getAll && (
                 <div>
                   <Link href={`/api/auth/signin`}>
                     <a
@@ -75,8 +74,8 @@ export default function Header() {
                   </Link>
                 </div>
               )}
-              {session?.user && (
-                <div className="flex">
+              {!getAll && (
+                <div className="flex ">
                   <Link href={'/'}>
                     <div className="flex cursor-pointer mr-2">
                       <div className="mr-2">
@@ -84,17 +83,21 @@ export default function Header() {
                           width={40}
                           height={40}
                           src={
-                            session.user.image
-                              ? session.user.image
-                              : 'https://freeimage.host/content/images/system/logo_homepage_1577917990964_282d1e.webp'
+                            // getAll.user.image
+                            // ? getAll.user.image:
+                            'https://freeimage.host/content/images/system/logo_homepage_1577917990964_282d1e.webp'
                           }
-                          alt={session.user.name ? session.user.name : 'image'}
+                          alt={'image'}
                           className="rounded-full"
                         />
                       </div>
                       <div>
-                        <p className="font-bold">{session.user.name}</p>
-                        <p>Số dư: 0 VNĐ</p>
+                        {!session && (
+                          <>
+                            <p className="font-bold">user name</p>
+                            <p>Số dư: 0 VNĐ</p>
+                          </>
+                        )}
                       </div>
                     </div>
                   </Link>
@@ -108,37 +111,37 @@ export default function Header() {
                           className="min-w-[200px] bg-white shadow shadow-[#4b4b4b4d] py-[15px] px-5 rounded-[5px]"
                           {...attrs}
                         >
-                          <Link href={'/dang-tin'}>
+                          <Link href={'quan-ly/dang-tin'}>
                             <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
                               <FontAwesomeIcon icon={faPen} />
                               <span className="ml-2">Đăng tin cho thuê</span>
                             </a>
                           </Link>
-                          <Link href={'/quan-ly-dang-tin'}>
+                          <Link href={'quan-ly/quan-ly-dang-tin'}>
                             <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
                               <FontAwesomeIcon icon={faListCheck} />
                               <span className="ml-2">Quản lý đăng tin</span>
                             </a>
                           </Link>
-                          <Link href={'/nap-tien'}>
+                          <Link href={'quan-ly/nap-tien'}>
                             <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
                               <FontAwesomeIcon icon={faCreditCard} />
                               <span className="ml-2">Nạp tiền</span>
                             </a>
                           </Link>
-                          <Link href={'/lich-su-nap-tien'}>
+                          <Link href={'quan-ly/lich-su-nap-tien'}>
                             <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
                               <FontAwesomeIcon icon={faClockRotateLeft} />
                               <span className="ml-2">Lịch sử nạp tiền</span>
                             </a>
                           </Link>
-                          <Link href={'/thong-tin-ca-nhan'}>
+                          <Link href={'quan-ly/thong-tin-ca-nhan'}>
                             <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
                               <FontAwesomeIcon icon={faCircleUser} />
                               <span className="ml-2">Thông tin cá nhân</span>
                             </a>
                           </Link>
-                          <Link href={'/tin-da-luu'}>
+                          <Link href={'quan-ly/tin-da-luu'}>
                             <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
                               <FontAwesomeIcon icon={faHeart} />
                               <span className="ml-2">Tin đã lưu</span>
@@ -149,7 +152,7 @@ export default function Header() {
                               className="flex items-center py-[10px]"
                               onClick={(e) => {
                                 e.preventDefault();
-                                signOut();
+                                // signOut();
                               }}
                             >
                               <FontAwesomeIcon icon={faRightFromBracket} />
@@ -167,7 +170,7 @@ export default function Header() {
                   </div>
                 </div>
               )}
-              <Link href={'/dangtinmoi'}>
+              <Link href={'/dang-tin-moi'}>
                 <a className="hidden lg:inline-flex h-10 rounded bg-[#f73859] font-bold text-white items-center justify-center px-2.5 ml-1">
                   <span className="mr-1">Đăng tin mới</span>
                   <FontAwesomeIcon icon={faCirclePlus}></FontAwesomeIcon>
@@ -177,7 +180,7 @@ export default function Header() {
           </div>
         </div>
         <Navbar key="navbar" />
-        <button className="block lg:hidden absolute top-5 right-5 text-white text-2xl" onClick={() => toggleNav()}>
+        <button className="block lg:hidden absolute top-2 right-5 text-white text-2xl" onClick={() => toggleNav()}>
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </header>

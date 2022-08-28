@@ -10,6 +10,8 @@ export interface UserState {
   setDateOfBirth: (loading: number) => void;
   phoneNumber: string;
   setPhoneNumber: (loading: string) => void;
+  token: string;
+  setToken: (loading: string) => void;
 }
 
 const UserContext = createContext<UserState | null>(null);
@@ -21,6 +23,14 @@ export const UserProvider = ({ children }: any) => {
   const [userName, setUserName] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState(0);
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [token, setToken] = useState('');
+
+  // const [typeRealEstate, setTypeRealEstate] = useState(0);
+  // const [fillterAddress, setFilterAddress] = useState('');
+  // const [filterAboutPrice, setFilterAboutPrice] = useState(null);
+  // const [filterArea, setFilterArea] = useState(null);
+
+  // const SetFilterData = (typeRE:number , address:string , )
 
   const value: UserState = {
     loading,
@@ -31,6 +41,8 @@ export const UserProvider = ({ children }: any) => {
     setDateOfBirth,
     phoneNumber,
     setPhoneNumber,
+    token,
+    setToken,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

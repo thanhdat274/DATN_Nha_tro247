@@ -1,0 +1,6 @@
+.form-select {
+  @apply lg:w-[180px] lg:px-[10px] lg:text-sm lg:mt-[2px]  md:w-[140px] md:px-[5px] md:text-sm md:mt-[2px]  sm:w-[110px] sm:px-[5px] sm:text-xs sm:mt-[2px];
+}
+.form-button{
+    @apply lg:w-[180px] lg:px-[10px] lg:text-sm lg:mt-[2px]  md:w-[140px] md:px-[5px] md:text-sm md:mt-[2px]  sm:w-[110px] sm:px-[5px] sm:text-xs sm:mt-[2px]
+}

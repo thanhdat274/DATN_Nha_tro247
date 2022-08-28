@@ -7,8 +7,8 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['fakestoreapi.com', 'randomuser.me', 'iili.io', 'lh3.googleusercontent.com'],
-    hostname: ['fakestoreapi.com', 'randomuser.me', 'iili.io', 'lh3.googleusercontent.com'],
+    domains: ['fakestoreapi.com', 'randomuser.me', 'iili.io', 'lh3.googleusercontent.com', 'freeimage.host'],
+    hostname: ['fakestoreapi.com', 'randomuser.me', 'iili.io', 'lh3.googleusercontent.com', 'freeimage.host'],
   },
   pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
 };

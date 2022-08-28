@@ -16,14 +16,15 @@ export default function ListData(props: IListDataProps) {
         return (
           <Link key={item.id + 'link'} href={`/cho-thue-can-ho/${item.id}`}>
             <a>
-              <div key={index} className="box-item flex flex-row w-auto">
-                <div className="image base-2/5 min-w-fit">
+              <div key={index} className="box-item flex flex-row w-full">
+                <div className="image base-2/5 ">
                   <Image height={360} width={360} src="https://iili.io/S1JrBe.png" alt="https://iili.io/S1JrBe.png" />
                 </div>
                 <div className="title base-3/5">{item.title}</div>
               </div>
             </a>
           </Link>
+          
         );
       })}
     </div>

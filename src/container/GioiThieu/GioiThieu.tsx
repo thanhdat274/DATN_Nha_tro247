@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './GioiThieu.module.css';
@@ -10,7 +11,7 @@ type Props = {
 const GioiThieu = (props: Props) => {
   const { title, desc } = props;
   return (
-    <div className="container">
+    <div className='container mx-auto'>
       <main className={styles.main}>
         <article className={styles.the_article}>
           <div className={styles.article_main_content}>
@@ -18,20 +19,20 @@ const GioiThieu = (props: Props) => {
             <p className={styles.desc}>Chào bạn, sau đây là hướng dẫn sử dụng cho thành viên website nhatro247.com.</p>
             <p className={styles.desc}>
               Nếu bạn chưa có tài khoản, hãy{' '}
-              <a href="" className={styles.link}>
-                đăng ký tại đây
-              </a>{' '}
+              <Link href="" className={styles.link}>
+                <a className={styles.link}> đăng ký tại đây</a>
+              </Link>{' '}
               trước khi bắt đầu đăng tin mới.
             </p>
             <p className={styles.desc}>
               Nếu đã có tài khoản, sau khi{' '}
-              <a href="" className={styles.link}>
-                đăng nhập
-              </a>{' '}
+              <Link href="" className={styles.link}>
+                <a className={styles.link}>đăng nhập</a>
+              </Link>{' '}
               vào website, bạn bấm vào nút{' '}
-              <a href="" className={styles.link}>
-                ĐĂNG TIN
-              </a>{' '}
+              <Link href="" className={styles.link}>
+                <a className={styles.link}> ĐĂNG TIN</a>
+              </Link>{' '}
               để bắt đầu.
             </p>
             <p>
@@ -57,9 +58,9 @@ const GioiThieu = (props: Props) => {
             <h2 className="text-[23.5px] mb-[18px] leading-[30px] font-bold">Hướng dẫn nạp tiền</h2>
             <p className={styles.desc}>
               {'Sau khi "Đăng nhập" quý khách nhấp chọn vào phần Quản lý tài khoản và chọn'}{' '}
-              <a href="" className={styles.link}>
-                Nạp Tiền
-              </a>
+              <Link className={styles.link} href="">
+                <a className={styles.link}>Nạp Tiền</a>
+              </Link>
             </p>
             <p className={styles.desc}>Quý khách có thể chọn các hình thức thanh toán sau: </p>
             <ul className="list-disc ml-[25px]">
@@ -81,17 +82,17 @@ const GioiThieu = (props: Props) => {
             </ul>
             <p className={styles.desc}>
               Link nạp tiền:{' '}
-              <a href="https://nhatro247.com/quan-ly/nap-tien.html" className={styles.link}>
-                https://nhatro247.com/quan-ly/nap-tien.html
-              </a>
+              <Link className={styles.link} href="">
+                <a className={styles.link}>https://nhatro247.com/quan-ly/nap-tien.html</a>
+              </Link>
             </p>
             <br />
             <h2 className="text-[23.5px] mb-[18px] leading-[30px] font-bold">Hướng dẫn quản lý tin rao</h2>
             <p>
               Đăng nhập tài khoản, sau đó nhấp vào phần Quản lý tài khoản, chọn{' '}
-              <a href="https://nhatro247.com/quan-ly/tin-dang.html" className={styles.link}>
-                Quản lý tin đăng
-              </a>{' '}
+              <Link href="" className={styles.link}>
+                <a className={styles.link}>Quản lý tin đăng</a>
+              </Link>{' '}
               để quản lý các tin đã đăng trên hệ thống.
             </p>
             <p className={styles.desc}>
@@ -253,20 +254,18 @@ const GioiThieu = (props: Props) => {
             <br />
             <h6 className={styles['section_title']}>Bạn đang có phòng trọ / căn hộ cho thuê?</h6>
             <p className={styles.desc1}>Không phải lo tìm người cho thuê, phòng trống kéo dài</p>
-            <a
-              className={styles['but']}
-              style={{ padding: '10px 30px' }}
-              rel="nofollow"
-              href="https://nhatro247.com/quan-ly/dang-tin-moi.html"
-            >
-              Đăng tin ngay
-            </a>
+            <br />
+            <Link href="" className={styles['but']} style={{ padding: '10px 30px' }}>
+              <a className={styles['but']} style={{ padding: '10px 30px' }} rel="nofollow">
+                Đăng tin ngay
+              </a>
+            </Link>
           </div>
         </section>
         <section className={styles['section-support']}>
           <div className={styles['section-content clearfix']}>
             <div className={styles['support-bg']}>
-              <img src="https://res.cloudinary.com/dvj4wwihv/image/upload/v1659020657/support-bg_qvpvmv.jpg" />
+              <Image src="/images/contactus.png" height={200} width={600} />
             </div>
             <div className={styles['list-support']}>
               <div className={styles['list-support-title']}>Liên hệ với chúng tôi nếu bạn cần hỗ trợ:</div>
@@ -297,9 +296,9 @@ const GioiThieu = (props: Props) => {
                   <a> Zalo: 0917686101</a>
                 </Link>
               </div>
-              <a className={styles['btn']} rel="nofollow" href="/lien-he">
-                Gửi liên hệ
-              </a>
+              <Link className={styles['btn']} rel="nofollow" href="/lien-he">
+                <a className={styles['btn']}>Gửi liên hệ</a>
+              </Link>
             </div>
           </div>
         </section>
