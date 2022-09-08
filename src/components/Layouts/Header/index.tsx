@@ -1,8 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Modal from 'react-modal';
+import Tabs from './Tabs';
+
 import {
   faAngleDown,
   faCirclePlus,
@@ -19,6 +22,21 @@ import {
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Navbar from '../Navbar';
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    maxWidth: '500px',
+    minWidth: '200px',
+    width: '100%',
+    minHeight: '300px',
+  },
+};
+
 export default function Header() {
   const [toggle, setToogle] = useState(false);
   const toggleNav = () => {
@@ -29,7 +47,7 @@ export default function Header() {
   const getAll = true;
 
   return (
-    <div className="shadow lg:shadow-none">
+    <div className="shadow lg:shadow-none mb-4 sm:mb-6 md:mb-14 xl:mb-20">
       <div className="container mx-auto">
         <div className="flex lg:hidden justify-between items-center">
           <div className="w-[200px] h-[50px] relative">
@@ -39,6 +57,7 @@ export default function Header() {
             <FontAwesomeIcon className="text-2xl" icon={faBars} />
             <span className="ml-2">Danh mục</span>
           </div>
+          {/* >>>>>>> develop */}
         </div>
       </div>
       <header
@@ -53,130 +72,7 @@ export default function Header() {
                 <Image src="/images/logo.svg" alt="logo" layout="fill" priority></Image>
               </a>
             </Link>
-            <div className="flex">
-              {getAll && (
-                <div>
-                  <Link href={`/api/auth/signin`}>
-                    <a
-                      className="h-10 rounded bg-[#ffc107] lg:bg-[#3961fb] font-bold text-black lg:text-white inline-flex items-center justify-center px-2.5 ml-1"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        signIn();
-                      }}
-                    >
-                      Đăng nhập
-                    </a>
-                  </Link>
-                  <Link href={'/dangky'}>
-                    <a className="h-10 rounded bg-[#ffc107] lg:bg-[#3961fb] font-bold text-black lg:text-white inline-flex items-center justify-center px-2.5 ml-1">
-                      Đăng ký
-                    </a>
-                  </Link>
-                </div>
-              )}
-              {!getAll && (
-                <div className="flex ">
-                  <Link href={'/'}>
-                    <div className="flex cursor-pointer mr-2">
-                      <div className="mr-2">
-                        <Image
-                          width={40}
-                          height={40}
-                          src={
-                            // getAll.user.image
-                            // ? getAll.user.image:
-                            'https://freeimage.host/content/images/system/logo_homepage_1577917990964_282d1e.webp'
-                          }
-                          alt={'image'}
-                          className="rounded-full"
-                        />
-                      </div>
-                      <div>
-                        {!session && (
-                          <>
-                            <p className="font-bold">user name</p>
-                            <p>Số dư: 0 VNĐ</p>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                  <div>
-                    <Tippy
-                      trigger="click"
-                      placement="bottom-start"
-                      interactive={true}
-                      render={(attrs) => (
-                        <div
-                          className="min-w-[200px] bg-white shadow shadow-[#4b4b4b4d] py-[15px] px-5 rounded-[5px]"
-                          {...attrs}
-                        >
-                          <Link href={'quan-ly/dang-tin'}>
-                            <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
-                              <FontAwesomeIcon icon={faPen} />
-                              <span className="ml-2">Đăng tin cho thuê</span>
-                            </a>
-                          </Link>
-                          <Link href={'quan-ly/quan-ly-dang-tin'}>
-                            <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
-                              <FontAwesomeIcon icon={faListCheck} />
-                              <span className="ml-2">Quản lý đăng tin</span>
-                            </a>
-                          </Link>
-                          <Link href={'quan-ly/nap-tien'}>
-                            <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
-                              <FontAwesomeIcon icon={faCreditCard} />
-                              <span className="ml-2">Nạp tiền</span>
-                            </a>
-                          </Link>
-                          <Link href={'quan-ly/lich-su-nap-tien'}>
-                            <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
-                              <FontAwesomeIcon icon={faClockRotateLeft} />
-                              <span className="ml-2">Lịch sử nạp tiền</span>
-                            </a>
-                          </Link>
-                          <Link href={'quan-ly/thong-tin-ca-nhan'}>
-                            <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
-                              <FontAwesomeIcon icon={faCircleUser} />
-                              <span className="ml-2">Thông tin cá nhân</span>
-                            </a>
-                          </Link>
-                          <Link href={'quan-ly/tin-da-luu'}>
-                            <a className="flex items-center py-[10px] border-b-[1px] border-inherit">
-                              <FontAwesomeIcon icon={faHeart} />
-                              <span className="ml-2">Tin đã lưu</span>
-                            </a>
-                          </Link>
-                          <Link href={'/api/auth/signout'}>
-                            <a
-                              className="flex items-center py-[10px]"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                // signOut();
-                              }}
-                            >
-                              <FontAwesomeIcon icon={faRightFromBracket} />
-                              <span className="ml-2">Thoát</span>
-                            </a>
-                          </Link>
-                        </div>
-                      )}
-                    >
-                      <button className="h-10 rounded bg-[#3961fb] font-bold text-white inline-flex items-center justify-center px-2.5 ml-1">
-                        <span className="mr-1">Quản lý tài khoản</span>
-                        <FontAwesomeIcon icon={faAngleDown} />
-                      </button>
-                    </Tippy>
-                  </div>
-                </div>
-              )}
-              <Link href={'/dang-tin-moi'}>
-                <a className="hidden lg:inline-flex h-10 rounded bg-[#f73859] font-bold text-white items-center justify-center px-2.5 ml-1">
-                  <span className="mr-1">Đăng tin mới</span>
-                  <FontAwesomeIcon icon={faCirclePlus}></FontAwesomeIcon>
-                </a>
-              </Link>
-            </div>
+     
           </div>
         </div>
         <Navbar key="navbar" />
@@ -184,6 +80,7 @@ export default function Header() {
           <FontAwesomeIcon icon={faXmark} />
         </button>
       </header>
+
       {toggle && (
         <div
           className=" before:bg-[#0000003b] before:w-full before:h-full before:absolute before:inset-0"

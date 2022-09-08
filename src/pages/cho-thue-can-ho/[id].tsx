@@ -9,6 +9,8 @@ export interface ICanHoProps {
 export default function CanHo(props: ICanHoProps) {
   const { canho } = props;
 
+  console.log('canho', canho);
+
   return (
     <div>
       <h1>Can ho detail</h1>

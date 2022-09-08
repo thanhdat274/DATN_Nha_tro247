@@ -1,6 +1,10 @@
 /* code css phần trang giới thiệu */
 .main {
+<<<<<<< HEAD
   @apply w-full p-[10px] m-auto  z-[1] sm:w-full sm:px-[10px] md:w-full md:px-[10px] lg:w-full lg:px-[10px];
+=======
+  @apply max-w-[1100px] m-auto relative sm:max-w-[640px] sm:px-[10px] md:max-w-[768px] md:px-[10px] lg:max-w-[1024px] lg:px-[10px];
+>>>>>>> origin/nghiapd/login
 }
 
 .the_article {
@@ -20,12 +24,20 @@
 }
 
 .section {
+<<<<<<< HEAD
   @apply mb-[20px] p-0 sm:p-[20px] bg-[#fff] border-[1px] border-[#dedede] rounded-[8px];
+=======
+  @apply mb-[20px] p-[20px] bg-[#fff] border-[1px] border-[#dedede] rounded-[8px];
+>>>>>>> origin/nghiapd/login
 }
 
 .section-whyus,
 .section_content {
+<<<<<<< HEAD
   @apply pt-[20px] px-[10px] sm:px-[50px] pb-[50px] text-center text-[15px];
+=======
+  @apply pt-[20px] px-[50px] pb-[50px] text-center text-[15px];
+>>>>>>> origin/nghiapd/login
 }
 
 .section .section_title {
@@ -41,7 +53,11 @@
 }
 
 .whyus_countup_item .whyus_countup_item_number {
+<<<<<<< HEAD
   @apply font-bold text-[0.9rem] block mb-[5px] sm:text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem];
+=======
+  @apply font-bold text-[1.5rem] block mb-[5px];
+>>>>>>> origin/nghiapd/login
 }
 
 .but {
@@ -49,6 +65,7 @@
 }
 
 .section-support {
+<<<<<<< HEAD
   @apply border-[7px] border-dashed border-[#e8eefc] p-[10px] sm:p-[30px] mt-[30px] rounded-[8px] bg-white;
 }
 .support-bg {
@@ -56,6 +73,13 @@
 }
 .section-support .list-support {
   @apply text-center px-[10px] mt-[30px] flex flex-col sm:block;
+=======
+  @apply border-[7px] border-dashed border-[#e8eefc] p-[30px] mt-[30px] rounded-[8px];
+}
+
+.section-support .list-support {
+  @apply text-center px-[10px] mt-[30px];
+>>>>>>> origin/nghiapd/login
 }
 
 .section-support .list-support-title {
@@ -63,6 +87,7 @@
 }
 
 .section-support .support-item {
+<<<<<<< HEAD
   @apply mb-[25px] w-full sm:w-[33%] float-left;
 }
 
@@ -72,6 +97,17 @@
 
 .section-support .support-item a {
   @apply block text-[#233762] text-[0.7rem] font-bold my-[5px] sm:text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem];
+=======
+  @apply mb-[25px] w-[33%] float-left;
+}
+
+.section-support .support-item-title {
+  @apply font-bold block mb-[10px] text-[#f60] uppercase;
+}
+
+.section-support .support-item a {
+  @apply block text-[#233762] text-[1.5rem] font-bold my-[5px] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.5rem];
+>>>>>>> origin/nghiapd/login
 }
 
 .section-support a .btn {

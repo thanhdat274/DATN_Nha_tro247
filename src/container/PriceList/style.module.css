@@ -1,0 +1,103 @@
+.section-header {
+  border: 0px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px 10px rgb(236, 236, 236);
+  @apply md:w-[730px] lg:m-auto lg:w-[1100px] lg:mt-5;
+}
+/* lg, md, sm */
+
+.section-content {
+  @apply w-[1100px] m-auto pt-[20px] pb-[20px] 2xs:w-[365px] sm:w-[500px] s:w-[540px] lg:w-[1000px];
+}
+.section-content p {
+  line-height: 30px;
+}
+.section-content-table {
+  @apply m-auto pt-[20px] pb-[20px];
+}
+.table-pricing table {
+  @apply table border-collapse w-full sm:w-[640px] md:w-[768px];
+}
+/* .table-pricing td,
+.table-pricing th {
+  background-color: antiquewhite;
+  @apply pt-[10px] pb-[15px] border-x-10 border-[#fff] border-b-1 bg-[#f9f9f9] text-left w-[12.5%] align-top
+  padding: 10px 15px;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+  text-align: left;
+  width: 12.5%;
+  vertical-align: top;
+} */
+.table-pricing td p,
+.table-pricing th p {
+  font-size: 14px;
+  line-height: 30px;
+}
+.price-day {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /* text-decoration: line-through; */
+}
+.btn {
+  width: 100%;
+  background-color: rgb(56, 145, 240);
+  border-radius: 3px;
+}
+.vip-demo {
+  max-width: 700px;
+  margin: auto;
+}
+.testimonials-item {
+  box-shadow: 0 0 30px 10px rgb(236, 236, 236);
+  border-radius: 10px;
+  height: 400px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding-left: 15px;
+  padding-right: 15px;
+  @apply 2xs:text-xs;
+}
+.box-cart {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 0 30px 10px rgb(236, 236, 236);
+  /* margin: auto; */
+  margin-left: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.method_item {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.method_item_icon {
+  width: 100px;
+  height: 100px;
+}
+
+.table-pricing td,
+.table-pricing th {
+  background-color: antiquewhite;
+  padding: 10px 15px;
+  border-left: 10px solid #fff;
+  border-right: 10px solid #fff;
+  border-bottom: 1px solid #eee;
+  background-color: #f9f9f9;
+  text-align: left;
+  vertical-align: text-top;
+  width: 12.5%;
+  @apply 2xs:w-[50px] 2xs:px-[0px] 2xs:text-xs 2xs:border-x-[3px] xs:border-x-[3px] s:border-x-[3px];
+}
+
+.table-pricing td p,
+.table-pricing th p {
+  font-size: 14px;
+}

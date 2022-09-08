@@ -7,185 +7,111 @@ export interface ISuaProps {}
 
 export default function Sua(props: ISuaProps) {
   return (
-    <div className=" md:mx-10">
-      <div className="bg-amber-100 border-amber-100 py-2.5 px-2.5 rounded-lg sm:hidden">
-        <p>
-          Xin chào <strong>Nguyễn Đắc Trọng</strong> . Mã tài khoản : <strong>12345</strong>
-        </p>
-        <p>
-          Số dư tài khoản: <strong>0đ</strong>
-        </p>
+    <div className="main">
+      <div className="breadcrumb bg-[#e9ecef] px-[1rem] py-[0.75rem] rounded-[0.25rem] mb-[1rem]">
+        <Link href="/">
+          <a className="text-[#007bff] hover:underline hover:text-[#0056b3] pr-1">Trang chủ</a>
+        </Link>
+        /
+        <Link href="/">
+          <a className="text-[#007bff] hover:underline hover:text-[#0056b3] px-1">Quản lý</a>
+        </Link>
+        /<span className="pl-1">Cập nhật thông tin cá nhân</span>
       </div>
-      <div className="  sm:border-2  sm:my-3.5 sm:rounded-md   sm:bg-slate-100 ">
-        <div className="   mx-3 my-3">
-          {/* <span>Phongtro123.com</span>/ <span>Quản lý</span>/ <span>Cập nhật thông tin cá nhân</span> */}
-          <ul className="flex flex-wrap">
-            <li className="text-sky-600">Phongtro123.com</li> <p className="px-1">/</p>
-            <li className="text-sky-600">Quản lý</li> <p className="px-1">/</p>
-            <li>Cập nhật thông tin cá nhân</li>
-          </ul>
-        </div>
-      </div>
-      <div className=" ">
-        <h1 className=" text-2xl lg:text-3xl pb-3">Cập nhật thông tin cá nhân</h1>
-        <hr />
-      </div>
-      <div className="w-full m-auto pt-8">
-        <form className="w-full justify-center">
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Mã thành viên
-              </label>
-            </div>
-            <div className=" w-full">
+      <h2 className="text-2xl border-b pb-1 mb-8">Cập nhật thông tin cá nhân</h2>
+      <div className="form-contact w-1/2 mx-auto">
+        <form>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Mã thành viên
+            </label>
+            <input
+              type="text"
+              value="134567"
+              className="w-2/3 border bg-[#e9ecef] border-[#ced4da] px-[0.75rem] py-[0.375rem] rounded-[0.25rem] focus:border-[#80bdff] focus:shadow-[#007bff40]"
+              disabled
+            />
+          </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Số điện thoại
+            </label>
+            <div className="w-2/3">
               <input
-                className="bg-gray-200   border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
                 type="text"
-                defaultValue="1323"
+                value="021354965"
+                className="w-full border bg-[#e9ecef] border-[#ced4da] px-[0.75rem] py-[0.375rem] rounded-[0.25rem] focus:border-[#80bdff] focus:shadow-[#007bff40] focus:outline-none"
+                disabled
               />
+              <Link href="/">
+                <a className="block text-[#007bff] mt-2">Đổi số điện thoại</a>
+              </Link>
             </div>
           </div>
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Số điện thoại
-              </label>
-            </div>
-            <div className=" w-full">
-              <input
-                className="bg-gray-200   border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
-                type="text"
-                defaultValue="0989898989"
-              />
-              <p className="pt-px mt-2.5 mb-8 text-sky-600    ">
-                <Link href="">
-                  <a className="hover:text-teal-900">Đổi số điện thoại</a>
-                </Link>
-              </p>
-            </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Tên hiển thị
+            </label>
+            <input
+              type="text"
+              value="Name"
+              className="w-2/3 border border-[#ced4da] px-[0.75rem] py-[0.375rem] rounded-[0.25rem] focus:border-[#80bdff] focus:shadow-[#007bff40] focus:outline-none"
+            />
           </div>
-
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Tên hiển thị
-              </label>
-            </div>
-            <div className=" w-full">
-              <input
-                className="  border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
-                type="text"
-              />
-            </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Email
+            </label>
+            <input
+              type="text"
+              className="w-2/3 border border-[#ced4da] px-[0.75rem] py-[0.375rem] rounded-[0.25rem] focus:border-[#80bdff] focus:shadow-[#007bff40] focus:outline-none"
+            />
           </div>
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Email
-              </label>
-            </div>
-            <div className=" w-full">
-              <input
-                className="   border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
-                type="text"
-              />
-            </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Số Zalo
+            </label>
+            <input
+              type="text"
+              value="03215675"
+              className="w-2/3 border border-[#ced4da] px-[0.75rem] py-[0.375rem] rounded-[0.25rem] focus:border-[#80bdff] focus:shadow-[#007bff40] focus:outline-none"
+            />
           </div>
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Số Zalo
-              </label>
-            </div>
-            <div className=" w-full">
-              <input
-                className="   border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
-                type="text"
-              />
-            </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Facebook
+            </label>
+            <input
+              type="text"
+              className="w-2/3 border border-[#ced4da] px-[0.75rem] py-[0.375rem] rounded-[0.25rem] focus:border-[#80bdff] focus:shadow-[#007bff40] focus:outline-none"
+            />
           </div>
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Mã thành viên
-              </label>
-            </div>
-            <div className=" w-full">
-              <input
-                className="   border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
-                type="text"
-              />
-            </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Mật khấu
+            </label>
+            <Link href="">
+              <a className="text-[#007bff]">Đổi mật khẩu</a>
+            </Link>
           </div>
-          <div className=" sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36 ">
-              <label className="  " htmlFor="inline-full-name">
-                Facebook
-              </label>
-            </div>
-            <div className=" w-full">
-              <input
-                className="  border-2 border-gray-200 rounded w-full py-2 px-4   "
-                id="inline-full-name"
-                type="text"
-              />
-            </div>
-          </div>
-
-          <div className="sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className="mt-2 basis-36 ">
-              <label className=" " htmlFor="inline-full-name">
-                Mật khẩu
-              </label>
-            </div>
+          <div className="flex flex-wrap mb-5">
+            <label htmlFor="" className="w-1/3">
+              Ảnh đại diện
+            </label>
             <div className="">
-              <p className="   text-sky-600">
-                <Link href="">
-                  <a>Đổi mật khẩu</a>
-                </Link>
-              </p>
+              <Image
+                width={140}
+                height={140}
+                src={'https://freeimage.host/content/images/system/logo_homepage_1577917990964_282d1e.webp'}
+                alt={'image'}
+                className="rounded-full"
+              />
+              <input type="file" className="block" multiple />
             </div>
           </div>
-          <div className="sm:flex sm:w-9/12 m-auto   mb-6">
-            <div className=" mt-2 basis-36">
-              <label className=" " htmlFor="inline-full-name">
-                Ảnh
-              </label>
-            </div>
-            <div className="w-full">
-              <div className="mb-4">
-                <Image
-                  src={'/images/8af8aef002a48db660e44d34fd1abe24.jpeg'}
-                  width={150}
-                  height={150}
-                  alt=""
-                  className=" rounded-full "
-                />
-              </div>
-              <div className="pl-6">
-                {' '}
-                <button className="border-2 rounded-md bg-slate-100 my-2 px-8 py-1">Chọn ảnh</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-9/12 m-auto">
-            <div className=" rounded-xl bg-blue-600 text-white text-center py-2 ">
-              <button className="   " type="button">
-                Lưu & cập nhật
-              </button>
-            </div>
-          </div>
+          <button className="bg-[#007bff] text-white w-full px-[1rem] py-[0.5rem] rounded-md">Lưu và cập nhật</button>
         </form>
       </div>
-      <div className="WhyChose w-full py-2"></div>
     </div>
   );
 }
